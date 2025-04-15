@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Musholla Assalam - Islamic Center</title>
+  <link rel="stylesheet" href="../font/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <div class="mosque-name">
+        <h2><i class="fas fa-mosque"></i> Musholla Assalam</h2>
+        <p>Islamic Center for Spiritual Growth</p>
+      </div>
+    </div>
+    <nav>
+      <div class="nav-link"><a href="#About"><i class="fas fa-info-circle"></i> About</a></div>
+      <div class="nav-link"><a href="#Manager-Structure"><i class="fas fa-users"></i> Management</a></div>
+      <div class="nav-link"><a href="#Prayer-Times"><i class="fas fa-clock"></i> Prayer Times</a></div>
+    </nav>
+    <div class="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+  </header>
+
+  <div class="carousel">
+    <div class="slides fade">
+      <img src="../img/img1.jpg" alt="Mosque Interior" />
+      <div class="caption">Beautiful Interior Design</div>
+    </div>
+    <div class="slides fade">
+      <img src="../img/img2.jpg" alt="Prayer Hall" />
+      <div class="caption">Spacious Prayer Hall</div>
+    </div>
+    <div class="slides fade">
+      <img src="../img/img3.jpg" alt="Quran Class" />
+      <div class="caption">Quran Learning Sessions</div>
+    </div>
+    <div class="slides fade">
+      <img src="../img/img4.jpg" alt="Community Event" />
+      <div class="caption">Community Gatherings</div>
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div class="dots-container">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+  </div>
+
+  <section id="About">
+    <div class="section-container">
+      <h2><i class="fas fa-info-circle"></i> About Our Musholla</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Musholla Assalam is a vibrant Islamic center located in the heart of the city. Established in 2005, we serve as both a place of worship and a community hub for spiritual growth and social activities.</p>
+          <ul>
+            <li><i class="fas fa-check"></i> Daily prayers and Jumu'ah congregation</li>
+            <li><i class="fas fa-check"></i> Quran and Arabic classes for all ages</li>
+            <li><i class="fas fa-check"></i> Islamic lectures and seminars</li>
+            <li><i class="fas fa-check"></i> Community support programs</li>
+          </ul>
+        </div>
+        <div class="about-image">
+          <img src="../img/img6.jpg" alt="About Musholla Assalam">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="Manager-Structure" class="alt-bg">
+    <div class="section-container">
+      <h2><i class="fas fa-users"></i> Our Management Team</h2>
+      <div class="management-grid">
+        <div class="manager-card">
+          <img src="../img/imam.jpg" alt="Imam">
+          <h3>KH. Deden Makhyaruddin</h3>
+          <p>The chief of Imam</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="manager-card">
+          <img src="../img/secretary.jpg" alt="Secretary">
+          <h3>Syaiful Yudha Platoteles</h3>
+          <p>Secretary</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="manager-card">
+          <img src="../img/treasurer.jpg" alt="Treasurer">
+          <h3>Pak Rizal</h3>
+          <p>Treasurer</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="Prayer-Times">
+    <div class="section-container">
+      <h2><i class="fas fa-clock"></i> Prayer Times</h2>
+      <div class="prayer-controls">
+        <div class="location-selector">
+          <label for="city-input"><i class="fas fa-city"></i> City:</label>
+          <input type="text" id="city-input" value="Jakarta" placeholder="Enter city">
+          <button id="update-location"><i class="fas fa-sync-alt"></i> Update</button>
+        </div>
+        <div class="hijri-date" id="hijri-date"></div>
+      </div>
+      <div class="prayer-times-container">
+        <div class="prayer-time-card" id="fajr">
+          <div class="prayer-icon"><i class="fas fa-sun"></i></div>
+          <h3>Fajr</h3>
+          <p class="prayer-time">Loading...</p>
+          <p class="prayer-next">Next: <span class="countdown"></span></p>
+        </div>
+        <div class="prayer-time-card" id="dhuhr">
+          <div class="prayer-icon"><i class="fas fa-sun"></i></div>
+          <h3>Dhuhr</h3>
+          <p class="prayer-time">Loading...</p>
+          <p class="prayer-next">Next: <span class="countdown"></span></p>
+        </div>
+        <div class="prayer-time-card" id="asr">
+          <div class="prayer-icon"><i class="fas fa-sun"></i></div>
+          <h3>Asr</h3>
+          <p class="prayer-time">Loading...</p>
+          <p class="prayer-next">Next: <span class="countdown"></span></p>
+        </div>
+        <div class="prayer-time-card" id="maghrib">
+          <div class="prayer-icon"><i class="fas fa-moon"></i></div>
+          <h3>Maghrib</h3>
+          <p class="prayer-time">Loading...</p>
+          <p class="prayer-next">Next: <span class="countdown"></span></p>
+        </div>
+        <div class="prayer-time-card" id="isha">
+          <div class="prayer-icon"><i class="fas fa-moon"></i></div>
+          <h3>Isha</h3>
+          <p class="prayer-time">Loading...</p>
+          <p class="prayer-next">Next: <span class="countdown"></span></p>
+        </div>
+      </div>
+      <div class="prayer-footer">
+        <p>Method: <span id="calculation-method">Kemenag RI</span></p>
+        <p>Last Updated: <span id="last-updated"></span></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Musholla Assalam</h3>
+        <p>Jl. Kebajikan No. 123<br>Kota Damai, 12345</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#About">About Us</a></li>
+          <li><a href="#Manager-Structure">Management</a></li>
+          <li><a href="#Prayer-Times">Prayer Times</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2023 Musholla Assalam. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
