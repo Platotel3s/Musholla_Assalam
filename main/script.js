@@ -18,24 +18,17 @@ showSlides(slideIndex);
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }    
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}  
 function showSlides(n) {
       let slides = document.getElementsByClassName("slides");
       let dots = document.getElementsByClassName("dot");
-      
       if (n > slides.length) { slideIndex = 1 }
-      if (n < 1) { slideIndex = slides.length }
-      
+      if (n < 1) { slideIndex = slides.length } 
       for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
       }
-      
       for (let i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
       }
-      
       slides[slideIndex-1].style.display = "block";
       dots[slideIndex-1].className += " active";
 }
@@ -45,7 +38,6 @@ function showSlides(n) {
     carousel.addEventListener('mouseleave', () => {
       slideInterval = setInterval(() => plusSlides(1), 5000);
     });
-    
     window.addEventListener('scroll', function() {
       if (window.scrollY > 50) {
         document.querySelector('header').style.background = 'rgba(46, 125, 50, 0.95)';
@@ -66,41 +58,20 @@ function showSlides(n) {
     let prayerTimesData = null;
     let countdownInterval = null;
     async function getPrayerTimes(city = "Jakarta", country = "Indonesia") {
-      try {
-        const response = await fetch(
-          `https://api.aladhan.com/v1/timingsByCity?city=${encodeURIComponent(city)}&country=${encodeURIComponent(country)}&method=2`
-        );
+    try {
+        const response = await fetch(`https://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=2`);
         const data = await response.json();
-        if (data.code == 200) {
-          prayerTimesData = data.data;
-          updatePrayerTimesUI();
-          startCountdown();
-          const now = new Date();
-          document.getElementById('last-updated').textContent = now.toLocaleTimeString();
+        console.log(data); 
+        if (data.code !== 200) {
+          throw new Error(data.status);
         }
+        prayerTimes = data.data.timings;
+        updatePrayerTimesUI();
+        startCountdown();
       } catch (error) {
-        console.error("Failed to fetch prayer times:", error);
-        document.querySelector('.prayer-times-container').innerHTML = 
-          '<p class="error-message">Failed to load prayer times. Please try again later.</p>';
+        console.error("Gagal mengambil waktu sholat:", error.message);
+        alert("Terjadi kesalahan saat mengambil data waktu sholat. Coba lagi nanti.");
       }
-    
-    
-    // Pakai API ini jika API di atas error
-    // try {
-    //     const response = await fetch(`https://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=2`);
-    //     const data = await response.json();
-    //     console.log(data); // cek responsenya
-    //     if (data.code !== 200) {
-    //       throw new Error(data.status);
-    //     }
-    //     prayerTimes = data.data.timings;
-    //     updatePrayerTimesUI();
-    //     startCountdown();
-    //   } catch (error) {
-    //     console.error("Gagal mengambil waktu sholat:", error.message);
-    //     alert("Terjadi kesalahan saat mengambil data waktu sholat. Coba lagi nanti.");
-    //   }
-      
     }
     function updatePrayerTimesUI() {
       if (!prayerTimesData) return;
@@ -141,7 +112,6 @@ function showSlides(n) {
         for (const prayer of prayers) {
           const [hours, minutes] = prayer.time.split(':');
           const prayerTime = parseInt(hours) * 60 + parseInt(minutes);
-          
           if (prayerTime > currentTime) {
             nextPrayer = { ...prayer, minutesRemaining: prayerTime - currentTime };
             break;
@@ -175,5 +145,7 @@ function showSlides(n) {
         getPrayerTimes(city);
       }
     });
-    getPrayerTimes();
-  });
+    getPrayerTimes(city, country);
+  }
+);
+

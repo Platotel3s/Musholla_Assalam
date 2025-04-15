@@ -46,13 +46,11 @@ header{
     font-size: 0.8rem;
     color: #161616;
   }
-  
   nav {
     display: flex;
     gap: 1.5rem;
     align-items: center;
   }
-  
   .nav-link a {
     text-decoration: none;
     color: var(--dark-text);
@@ -62,7 +60,6 @@ header{
     align-items: center;
     gap: 5px;
   }
-  
   .nav-link a:hover {
     color: var(--primary-color);
   }
@@ -471,8 +468,6 @@ html {
       padding: 1.5rem;
     }
   }
-
-/* Add these styles to your existing CSS */
 .prayer-controls {
     display: flex;
     justify-content: space-between;
@@ -493,7 +488,6 @@ html {
     border-radius: 4px;
     font-family: inherit;
   }
-  
   .location-selector button {
     padding: 8px 15px;
     background-color: var(--primary-color);
@@ -503,60 +497,49 @@ html {
     cursor: pointer;
     transition: background-color 0.3s;
   }
-  
   .location-selector button:hover {
     background-color: var(--secondary-color);
   }
-  
   .hijri-date {
     background-color: rgba(46, 125, 50, 0.1);
     padding: 8px 15px;
     border-radius: 4px;
     font-weight: 500;
   }
-  
   .prayer-time-card {
     position: relative;
     overflow: hidden;
   }
-  
   .prayer-icon {
     font-size: 1.5rem;
     margin-bottom: 10px;
     color: var(--primary-color);
-  }
-  
+  }  
   .prayer-time {
     font-size: 1.5rem;
     font-weight: bold;
     margin: 5px 0;
   }
-  
   .prayer-next {
     font-size: 0.9rem;
     color: #666;
     margin-top: 5px;
-  }
-  
+  } 
   .prayer-next .countdown {
     color: var(--secondary-color);
     font-weight: bold;
   }
-  
   .prayer-footer {
     margin-top: 2rem;
     text-align: center;
     font-size: 0.9rem;
     color: #666;
   }
-  
   .error-message {
     color: var(--secondary-color);
     text-align: center;
     padding: 2rem;
   }
-  
-  /* Active prayer highlight */
   .prayer-time-card.active {
     background-color: rgba(46, 125, 50, 0.1);
     border: 2px solid var(--primary-color);
