@@ -145,7 +145,7 @@ function showSlides(n) {
         getPrayerTimes(city);
       }
     });
-    getPrayerTimes(city, country);
+    getPrayerTimes();
   }
 );
 
