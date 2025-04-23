@@ -58,8 +58,9 @@ cd prayer-times-app
 --- 
 
 ### 📸 Screenshot
-
-
+<img src="img/Screenshot_20250423_093456.png">
+<img src="img/Screenshot_20250423_093503.png">
+<img src="img/Screenshot_20250423_102353.png">
 --- 
 
 ### 📚 API Reference
